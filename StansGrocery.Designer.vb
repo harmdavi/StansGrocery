@@ -25,7 +25,7 @@ Partial Class StansGrocery
         Me.SearchBox = New System.Windows.Forms.TextBox()
         Me.SearchButton = New System.Windows.Forms.Button()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ListBox = New System.Windows.Forms.ListBox()
+        Me.ListBoxDisplay = New System.Windows.Forms.ListBox()
         Me.GroupBox = New System.Windows.Forms.GroupBox()
         Me.FilterByCategory = New System.Windows.Forms.RadioButton()
         Me.FilterByAisleRadio = New System.Windows.Forms.RadioButton()
@@ -70,14 +70,14 @@ Partial Class StansGrocery
         Me.ComboBox1.Size = New System.Drawing.Size(238, 33)
         Me.ComboBox1.TabIndex = 2
         '
-        'ListBox
+        'ListBoxDisplay
         '
-        Me.ListBox.FormattingEnabled = True
-        Me.ListBox.ItemHeight = 25
-        Me.ListBox.Location = New System.Drawing.Point(12, 136)
-        Me.ListBox.Name = "ListBox"
-        Me.ListBox.Size = New System.Drawing.Size(642, 379)
-        Me.ListBox.TabIndex = 3
+        Me.ListBoxDisplay.FormattingEnabled = True
+        Me.ListBoxDisplay.ItemHeight = 25
+        Me.ListBoxDisplay.Location = New System.Drawing.Point(12, 136)
+        Me.ListBoxDisplay.Name = "ListBoxDisplay"
+        Me.ListBoxDisplay.Size = New System.Drawing.Size(642, 379)
+        Me.ListBoxDisplay.TabIndex = 3
         '
         'GroupBox
         '
@@ -136,7 +136,7 @@ Partial Class StansGrocery
         '
         Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SearchToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
-        Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(98, 38)
+        Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(98, 36)
         Me.MenuToolStripMenuItem.Text = "Menu"
         '
         'SearchToolStripMenuItem
@@ -162,21 +162,21 @@ Partial Class StansGrocery
         '
         Me.HelpToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HelpToolStripMenuItem2})
         Me.HelpToolStripMenuItem1.Name = "HelpToolStripMenuItem1"
-        Me.HelpToolStripMenuItem1.Size = New System.Drawing.Size(359, 44)
+        Me.HelpToolStripMenuItem1.Size = New System.Drawing.Size(199, 44)
         Me.HelpToolStripMenuItem1.Text = "Help"
         '
         'HelpToolStripMenuItem2
         '
         Me.HelpToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HelpToolStripMenuItem3})
         Me.HelpToolStripMenuItem2.Name = "HelpToolStripMenuItem2"
-        Me.HelpToolStripMenuItem2.Size = New System.Drawing.Size(359, 44)
+        Me.HelpToolStripMenuItem2.Size = New System.Drawing.Size(199, 44)
         Me.HelpToolStripMenuItem2.Text = "Help"
         '
         'HelpToolStripMenuItem3
         '
         Me.HelpToolStripMenuItem3.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AreYouSureYouNeedHelpToolStripMenuItem})
         Me.HelpToolStripMenuItem3.Name = "HelpToolStripMenuItem3"
-        Me.HelpToolStripMenuItem3.Size = New System.Drawing.Size(359, 44)
+        Me.HelpToolStripMenuItem3.Size = New System.Drawing.Size(199, 44)
         Me.HelpToolStripMenuItem3.Text = "Help"
         '
         'AreYouSureYouNeedHelpToolStripMenuItem
@@ -190,7 +190,7 @@ Partial Class StansGrocery
         '
         Me.YesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PleaseAcceptLicenceAgreementToolStripMenuItem, Me.AcceptToolStripMenuItem})
         Me.YesToolStripMenuItem.Name = "YesToolStripMenuItem"
-        Me.YesToolStripMenuItem.Size = New System.Drawing.Size(359, 44)
+        Me.YesToolStripMenuItem.Size = New System.Drawing.Size(188, 44)
         Me.YesToolStripMenuItem.Text = "Yes."
         '
         'PleaseAcceptLicenceAgreementToolStripMenuItem
@@ -212,7 +212,7 @@ Partial Class StansGrocery
         Me.ClientSize = New System.Drawing.Size(1031, 591)
         Me.Controls.Add(Me.ExitButton)
         Me.Controls.Add(Me.GroupBox)
-        Me.Controls.Add(Me.ListBox)
+        Me.Controls.Add(Me.ListBoxDisplay)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.SearchButton)
         Me.Controls.Add(Me.SearchBox)
@@ -232,7 +232,7 @@ Partial Class StansGrocery
     Friend WithEvents SearchBox As TextBox
     Friend WithEvents SearchButton As Button
     Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents ListBox As ListBox
+    Friend WithEvents ListBoxDisplay As ListBox
     Friend WithEvents GroupBox As GroupBox
     Friend WithEvents FilterByCategory As RadioButton
     Friend WithEvents FilterByAisleRadio As RadioButton
