@@ -12,6 +12,7 @@ Option Compare Text
 
 Public Class StansGrocery
     Dim food(256, 2) As String
+    Dim filter As Integer
     Sub LoadDataArray()
         Dim temp() As String
         Dim SecondArray() As String
@@ -30,7 +31,7 @@ Public Class StansGrocery
             ' then takes that Item and loads it into the 0 demention of the food array
             ThirdArray = Split(SecondArray(1), "##LOC")
             Console.Write(ThirdArray(1))
-            Me.food$(i, 1) = ThirdArray(1)
+            Me.food$(i, 1) = ThirdArray(1).PadLeft(2) 'the pad left fixes the sorting of the aisle numeric values
             'This takes the value after the ##LOC delimiter and loads it into the third array to be loaded into the food array.
             ThirdArray = Split(SecondArray(2), "%%CAT")
             ThirdArray = Split(ThirdArray(1), Chr(34))
@@ -47,8 +48,8 @@ Public Class StansGrocery
 
     End Sub
     Private Sub StansGrocery_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        FilterByAisleRadio.Checked = True
         LoadDataArray()
+        FilterByAisleRadio.Checked = True
         ' temp = Split(My.Resources.Grocery, vbNewLine)
     End Sub
 
@@ -81,5 +82,35 @@ Public Class StansGrocery
             End If
 
         Next
+        If ListBoxDisplay.Items.Equals(Nothing) Then
+            MsgBox("")
+        End If
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+
+    End Sub
+    Private Sub LoadComboBox()
+        ComboBox1.Items.Clear()
+
+        For i = LBound(food) To UBound(food) - 1
+            If Not ComboBox1.Items.Contains(food(i, filter)) And food(i, filter) <> "" And food(i, filter) <> "  " Then
+                ComboBox1.Items.Add(food(i, filter))
+            End If
+        Next
+        ComboBox1.Sorted = True
+        ComboBox1.Items.Insert(0, "  Show All")
+        ComboBox1.SelectedIndex = 0
+
+    End Sub
+
+    Private Sub FilterByAisleRadio_CheckedChanged(sender As Object, e As EventArgs) Handles FilterByAisleRadio.CheckedChanged, FilterByCategory.CheckedChanged
+        If FilterByAisleRadio.Checked Then
+            filter = 1
+        Else
+            filter = 2
+        End If
+        LoadComboBox()
+
     End Sub
 End Class
