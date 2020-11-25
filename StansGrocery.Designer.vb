@@ -124,7 +124,7 @@ Partial Class StansGrocery
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1063, 40)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1063, 42)
         Me.MenuStrip1.TabIndex = 5
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -132,7 +132,7 @@ Partial Class StansGrocery
         '
         Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SearchToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
-        Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(98, 36)
+        Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(98, 38)
         Me.MenuToolStripMenuItem.Text = "Menu"
         '
         'SearchToolStripMenuItem
@@ -151,13 +151,13 @@ Partial Class StansGrocery
         '
         Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HelpToolStripMenuItem1})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(85, 36)
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(85, 38)
         Me.HelpToolStripMenuItem.Text = "Help"
         '
         'HelpToolStripMenuItem1
         '
         Me.HelpToolStripMenuItem1.Name = "HelpToolStripMenuItem1"
-        Me.HelpToolStripMenuItem1.Size = New System.Drawing.Size(359, 44)
+        Me.HelpToolStripMenuItem1.Size = New System.Drawing.Size(199, 44)
         Me.HelpToolStripMenuItem1.Text = "Help"
         '
         'YouWillFind
