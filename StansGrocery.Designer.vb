@@ -36,12 +36,7 @@ Partial Class StansGrocery
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HelpToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HelpToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AreYouSureYouNeedHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.YesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PleaseAcceptLicenceAgreementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AcceptToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.YouWillFind = New System.Windows.Forms.Label()
         Me.GroupBox.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -59,7 +54,7 @@ Partial Class StansGrocery
         Me.SearchButton.Name = "SearchButton"
         Me.SearchButton.Size = New System.Drawing.Size(247, 43)
         Me.SearchButton.TabIndex = 1
-        Me.SearchButton.Text = "Search"
+        Me.SearchButton.Text = "&Search"
         Me.SearchButton.UseVisualStyleBackColor = True
         '
         'ComboBox1
@@ -114,7 +109,8 @@ Partial Class StansGrocery
         '
         'ExitButton
         '
-        Me.ExitButton.Location = New System.Drawing.Point(775, 535)
+        Me.ExitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.ExitButton.Location = New System.Drawing.Point(935, 611)
         Me.ExitButton.Name = "ExitButton"
         Me.ExitButton.Size = New System.Drawing.Size(116, 44)
         Me.ExitButton.TabIndex = 2
@@ -128,7 +124,7 @@ Partial Class StansGrocery
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1031, 40)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1063, 40)
         Me.MenuStrip1.TabIndex = 5
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -142,13 +138,13 @@ Partial Class StansGrocery
         'SearchToolStripMenuItem
         '
         Me.SearchToolStripMenuItem.Name = "SearchToolStripMenuItem"
-        Me.SearchToolStripMenuItem.Size = New System.Drawing.Size(220, 44)
+        Me.SearchToolStripMenuItem.Size = New System.Drawing.Size(359, 44)
         Me.SearchToolStripMenuItem.Text = "Search"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(220, 44)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(359, 44)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'HelpToolStripMenuItem
@@ -160,56 +156,26 @@ Partial Class StansGrocery
         '
         'HelpToolStripMenuItem1
         '
-        Me.HelpToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HelpToolStripMenuItem2})
         Me.HelpToolStripMenuItem1.Name = "HelpToolStripMenuItem1"
-        Me.HelpToolStripMenuItem1.Size = New System.Drawing.Size(199, 44)
+        Me.HelpToolStripMenuItem1.Size = New System.Drawing.Size(359, 44)
         Me.HelpToolStripMenuItem1.Text = "Help"
         '
-        'HelpToolStripMenuItem2
+        'YouWillFind
         '
-        Me.HelpToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HelpToolStripMenuItem3})
-        Me.HelpToolStripMenuItem2.Name = "HelpToolStripMenuItem2"
-        Me.HelpToolStripMenuItem2.Size = New System.Drawing.Size(199, 44)
-        Me.HelpToolStripMenuItem2.Text = "Help"
-        '
-        'HelpToolStripMenuItem3
-        '
-        Me.HelpToolStripMenuItem3.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AreYouSureYouNeedHelpToolStripMenuItem})
-        Me.HelpToolStripMenuItem3.Name = "HelpToolStripMenuItem3"
-        Me.HelpToolStripMenuItem3.Size = New System.Drawing.Size(199, 44)
-        Me.HelpToolStripMenuItem3.Text = "Help"
-        '
-        'AreYouSureYouNeedHelpToolStripMenuItem
-        '
-        Me.AreYouSureYouNeedHelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.YesToolStripMenuItem})
-        Me.AreYouSureYouNeedHelpToolStripMenuItem.Name = "AreYouSureYouNeedHelpToolStripMenuItem"
-        Me.AreYouSureYouNeedHelpToolStripMenuItem.Size = New System.Drawing.Size(463, 44)
-        Me.AreYouSureYouNeedHelpToolStripMenuItem.Text = "Are you Sure you need Help?"
-        '
-        'YesToolStripMenuItem
-        '
-        Me.YesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PleaseAcceptLicenceAgreementToolStripMenuItem, Me.AcceptToolStripMenuItem})
-        Me.YesToolStripMenuItem.Name = "YesToolStripMenuItem"
-        Me.YesToolStripMenuItem.Size = New System.Drawing.Size(188, 44)
-        Me.YesToolStripMenuItem.Text = "Yes."
-        '
-        'PleaseAcceptLicenceAgreementToolStripMenuItem
-        '
-        Me.PleaseAcceptLicenceAgreementToolStripMenuItem.Name = "PleaseAcceptLicenceAgreementToolStripMenuItem"
-        Me.PleaseAcceptLicenceAgreementToolStripMenuItem.Size = New System.Drawing.Size(508, 44)
-        Me.PleaseAcceptLicenceAgreementToolStripMenuItem.Text = "Please accept Licence agreement "
-        '
-        'AcceptToolStripMenuItem
-        '
-        Me.AcceptToolStripMenuItem.Name = "AcceptToolStripMenuItem"
-        Me.AcceptToolStripMenuItem.Size = New System.Drawing.Size(508, 44)
-        Me.AcceptToolStripMenuItem.Text = "Accept"
+        Me.YouWillFind.AutoSize = True
+        Me.YouWillFind.Location = New System.Drawing.Point(47, 583)
+        Me.YouWillFind.Name = "YouWillFind"
+        Me.YouWillFind.Size = New System.Drawing.Size(0, 25)
+        Me.YouWillFind.TabIndex = 10
         '
         'StansGrocery
         '
+        Me.AcceptButton = Me.SearchButton
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1031, 591)
+        Me.CancelButton = Me.ExitButton
+        Me.ClientSize = New System.Drawing.Size(1063, 667)
+        Me.Controls.Add(Me.YouWillFind)
         Me.Controls.Add(Me.ExitButton)
         Me.Controls.Add(Me.GroupBox)
         Me.Controls.Add(Me.ListBoxDisplay)
@@ -219,6 +185,7 @@ Partial Class StansGrocery
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "StansGrocery"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Stans Grocery"
         Me.GroupBox.ResumeLayout(False)
         Me.GroupBox.PerformLayout()
@@ -243,10 +210,5 @@ Partial Class StansGrocery
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents HelpToolStripMenuItem2 As ToolStripMenuItem
-    Friend WithEvents HelpToolStripMenuItem3 As ToolStripMenuItem
-    Friend WithEvents AreYouSureYouNeedHelpToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents YesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PleaseAcceptLicenceAgreementToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AcceptToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents YouWillFind As Label
 End Class

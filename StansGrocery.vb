@@ -72,23 +72,41 @@ Public Class StansGrocery
     End Sub
 
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
+        Dim nothingArray() As String
+        Dim searchResultNumber As Integer
         ListBoxDisplay.Items.Clear()
         For i = LBound(food) To UBound(food) - 1
             'food(i, 0),searchbox.text)>0
             If InStr(food(i, 0), SearchBox.Text) > 0 Or InStr(food(i, 2), SearchBox.Text) > 0 Or InStr(food(i, 1), SearchBox.Text) > 0 Then
-                'Console.WriteLine(food(i, 0))
-                'Console.WriteLine(ListBox)
-                ListBoxDisplay.Items.Add(food(i, 0))
-            End If
 
+                ListBoxDisplay.Items.Add(food(i, 0))
+                If food(i, 0) <> "" Then
+                    searchResultNumber = +1
+                End If
+            End If
         Next
-        If ListBoxDisplay.Items.Equals(Nothing) Then
-            MsgBox("")
+        If searchResultNumber = 0 Then
+            MsgBox($"Sorry no matches for {SearchBox.Text}")
         End If
+        'If ListBoxDisplay.Equals(Nothing) Then
+        '    MsgBox($"Sorry no matches for {SearchBox}")
+        'End If
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
 
+        ListBoxDisplay.Items.Clear()
+
+        For i = LBound(food) To UBound(food) - 1
+            If ComboBox1.SelectedItem.ToString = food(i, filter) Then
+                ListBoxDisplay.Items.Add(food(i, 0))
+            End If
+        Next
+        If ComboBox1.SelectedItem.Equals("  Show All") Then
+            For i = LBound(food) To UBound(food) - 1
+                ListBoxDisplay.Items.Add(food(i, 0))
+            Next
+        End If
     End Sub
     Private Sub LoadComboBox()
         ComboBox1.Items.Clear()
@@ -101,6 +119,12 @@ Public Class StansGrocery
         ComboBox1.Sorted = True
         ComboBox1.Items.Insert(0, "  Show All")
         ComboBox1.SelectedIndex = 0
+        If ComboBox1.SelectedItem.Equals("  Show All") Then
+            For i = LBound(food) To UBound(food) - 1
+                ListBoxDisplay.Items.Add(food(i, 0))
+            Next
+
+        End If
 
     End Sub
 
@@ -113,4 +137,23 @@ Public Class StansGrocery
         LoadComboBox()
 
     End Sub
+
+    Private Sub ListBoxDisplay_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBoxDisplay.SelectedIndexChanged
+        For i = LBound(food) To UBound(food) - 1
+            If ListBoxDisplay.SelectedItem Is food(i, 0) Then
+                YouWillFind.Text = $"You Will Find {food(i, 0)} on Aisle {ListBoxDisplay.SelectedIndex} with the {food(i, 2)}"
+            End If
+        Next
+    End Sub
+
+    Private Sub LicenceAgreementToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
+
+    End Sub
+
+    Private Sub HelpToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles HelpToolStripMenuItem1.Click
+        AboutForm.Size = Me.Size
+        AboutForm.Show()
+    End Sub
+
 End Class
